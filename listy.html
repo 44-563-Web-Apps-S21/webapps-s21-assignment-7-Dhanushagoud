@@ -7,7 +7,7 @@
         .flex-container {
             display: flex;
             flex-direction: row;
-            background-color: red;
+            background-color: purple;
         }
         
         .flex-container>div {
@@ -22,7 +22,7 @@
         @media (max-width: 600px) {
             .flex-container {
                 flex-direction: column;
-                background-color:green;
+                background-color:rgb(23, 184, 212);
             }
         }
     </style>
@@ -50,7 +50,7 @@
         const element = document.createElement("div");
         element.innerHTML = document.getElementById("text").value;
         element.setAttribute('class', 'listy');
-        element.style.color = "orange"
+        element.style.color = "pink"
         var i;
         var listyItems = document.getElementsByClassName("listy");
         len = listyItems.length;
