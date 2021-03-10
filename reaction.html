@@ -18,44 +18,44 @@
     <button type="button" class="btn btn-primary" onclick="startTime()"> Start Timer</button>
     <button type="button" class="btn btn-primary" onclick="recordReact()">React Now</button>
   
-  <script> 
-    myTime = undefined;
-    function recordReact() {
-        myTime = Date.now();
-        console.log("Time : " + myTime);
-      }
-  
-     
-  
-      function startTime() {
-        
-        console.log(countdown);
-  
-        for (var i = 0; i < 3; i++) {
-  
-          setTimeout(function (i) {
-            document.getElementById("countdown").innerHTML = i
-          }, (((3) - i) * 1000), i);
-  
-        }
-  
-        setTimeout(function (i) {
-          console.log(i)
-          if (myTime == undefined) {
-            document.getElementById("target").innerHTML = "Too Slow"
-            document.getElementById("react").classList.add("btn-dark");
-            document.getElementById("react").classList.remove("btn-success");
+    <script> 
+        myTime = undefined;
+        function recordReact() {
+            myTime = Date.now();
+            console.log("Time : " + myTime);
           }
-          else {
-            var buttonTime = Date.now();
-            var elapsedTime = buttonTime - myTime;
-            document.getElementById("target").innerHTML = "Time was " + elapsedTime;
-            document.getElementById("react").classList.add("btn-primary");
-            document.getElementById("react").classList.remove("btn-success");
+      
+         
+      
+          function startTime() {
+            var countdown = getRandomIntInclusive(2, 10);
+            console.log(countdown);
+            
+            for (var i = 0; i < 3; i++) {
+      
+              setTimeout(function (i) {
+                document.getElementById("countdown").innerHTML = i
+              }, (((countdown) - i) * 1000), i);
+      
+            }
+      
+            setTimeout(function (i) {
+              console.log(i)
+              if (myTime == undefined) {
+                document.getElementById("target").innerHTML = "Too Slow"
+                document.getElementById("react").classList.add("btn-dark");
+                document.getElementById("react").classList.remove("btn-success");
+              }
+              else {
+                var buttonTime = Date.now();
+                var elapsedTime = buttonTime - myTime;
+                document.getElementById("target").innerHTML = "Time was " + elapsedTime;
+                document.getElementById("react").classList.add("btn-primary");
+                document.getElementById("react").classList.remove("btn-success");
+              }
+            }, (countdown)*1000)
           }
-        }, (3)*1000)
-      }
-    </script>
+        </script>
  
 </body>
 </html>
